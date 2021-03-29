@@ -1,0 +1,53 @@
+.menu {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    color: slategray;
+    font-size: 46px;
+    display: block;
+    margin: 50px auto;
+}
+
+.menu button,
+.menu button:focus {
+    width: 200px;
+    padding: 1rem 2rem;
+    border: none;
+    outline: none;
+    color: slategray;
+    font-size: 16px;
+    margin: 20px;
+    transition: 0.2s;
+}
+
+.menu button:hover {
+    cursor: pointer;
+    background-color: deepskyblue;
+    color: white;
+}
+
+.selected {
+    background-color: deepskyblue;
+    color: white !important;
+}
+
+.figures {
+    width: 100%;
+    text-align: center;
+}
+
+.figures span {
+    display: block;
+    color: slategray;
+    font-size: 26px;
+}
+
+.figures button,
+.figures button:focus {
+    width: max-content;
+    font-family: cursive;
+    font-size: 36px;
+}

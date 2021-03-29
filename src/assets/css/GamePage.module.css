@@ -1,0 +1,14 @@
+.exit {
+    position: absolute;
+    bottom: 20px;
+    display: block;
+    margin: 0 auto;
+    color: deepskyblue;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.exit:hover {
+    cursor: pointer;
+    color: cornflowerblue;
+}

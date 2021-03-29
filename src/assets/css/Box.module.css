@@ -1,0 +1,18 @@
+.box {
+    font-size: 100px;
+    font-family: cursive;
+    background-color: whitesmoke;
+    color: slategray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 30%;
+    transition: 0.3s;
+}
+
+.box:hover {
+    cursor: pointer;
+    background-color: deepskyblue;
+    opacity: 0.5;
+}

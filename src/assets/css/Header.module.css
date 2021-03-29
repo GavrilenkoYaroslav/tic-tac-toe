@@ -1,0 +1,21 @@
+.container {
+    position: absolute;
+    top: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.container span {
+    color: slategray;
+    font-size: 18px;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

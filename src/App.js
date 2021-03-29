@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import React, {useState, useCallback} from 'react';
+import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
+import {MenuPage} from './pages/MenuPage';
+import {withSuspense} from "./assets/hoc/withSuspense";
+import {initialConfig} from "./assets/initialConfig";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const GamePage = React.lazy(() => import('./pages/GamePage'));
+const PageNotFound = React.lazy(() => import('./pages/PageNotFound'));
+
+const GamePageLazy = withSuspense(GamePage);
+const PageNotFoundLazy = withSuspense(PageNotFound);
+
+const App = () => {
+    const [config, setConfig] = useState(initialConfig);
+
+    const setConfigMemo = useCallback((value) => setConfig(value), [setConfig]);
+
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route exact path={'/'} render={() => <MenuPage setConfig={setConfigMemo}/>}/>
+                <Route exact path={'/play'} render={() => <GamePageLazy config={config} setConfig={setConfigMemo}/>}/>
+                <Route exact path={'/404'} render={() => <PageNotFoundLazy/>}/>
+                <Route path={'*'} render={() => <Redirect to={'/404'}/>}/>
+            </Switch>
+        </BrowserRouter>
+    );
 }
 
 export default App;

@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    color: slategray;
+}
+
+.back {
+    color: deepskyblue;
+    transition: 0.3s;
+}
+
+.back:hover {
+    cursor: pointer;
+    color: cornflowerblue;
+}
