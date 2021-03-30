@@ -9,5 +9,4 @@ export const initialConfig = {
         figure: null,
         score: null,
     },
-    counter: 1,
 };

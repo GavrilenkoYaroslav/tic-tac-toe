@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useHistory } from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import styles from '../assets/css/MenuPage.module.css';
 
 export const MenuPage = ({setConfig}) => {
@@ -34,32 +34,32 @@ export const MenuPage = ({setConfig}) => {
 
     return (
         <div className={'page'}>
-        <div className={styles.menu}>
-            <span className={styles.title}>Menu</span>
+            <div className={styles.menu}>
+                <span className={styles.title}>Menu</span>
 
-            <div>
-                <button className={AI_mode === false ? styles.selected : ''} datafld={0} onClick={modeHandler}>
-                    Play with friend
-                </button>
-                <button className={AI_mode === true ? styles.selected : ''} datafld={1} onClick={modeHandler}>
-                    Play with computer
-                </button>
-            </div>
+                <div>
+                    <button className={AI_mode === false ? styles.selected : ''} datafld={0} onClick={modeHandler}>
+                        Play with friend
+                    </button>
+                    <button className={AI_mode === true ? styles.selected : ''} datafld={1} onClick={modeHandler}>
+                        Play with computer
+                    </button>
+                </div>
 
-            {showFigures &&
-            <div className={styles.figures}>
+                {showFigures &&
+                <div className={styles.figures}>
                 <span>
                     {(AI_mode ? '' : '1st ') + 'Player'}
                 </span>
-                <button datafld={'X'} onClick={ setFigures }>
-                    X
-                </button>
-                <button datafld={'O'} onClick={ setFigures }>
-                    O
-                </button>
+                    <button datafld={'X'} onClick={setFigures}>
+                        X
+                    </button>
+                    <button datafld={'O'} onClick={setFigures}>
+                        O
+                    </button>
+                </div>
+                }
             </div>
-            }
-        </div>
         </div>
     );
 };
