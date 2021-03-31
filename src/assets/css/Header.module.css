@@ -13,9 +13,13 @@
     font-size: 18px;
 }
 
-.score {
+.scoreBox {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.score {
+    font-size: 30px !important;
 }

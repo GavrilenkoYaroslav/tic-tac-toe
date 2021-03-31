@@ -1,11 +1,10 @@
 import React from 'react';
 import styles from '../assets/css/Box.module.css';
 
-export const Box = ({value, index, markBox, turn, AI}) => {
+export const Box = ({value, index, markBox}) => {
 
     const clickHandler = () => {
-        if (AI && turn === 'Player 2') return;
-        markBox(index);
+        markBox && markBox(index);
     }
 
     return (
